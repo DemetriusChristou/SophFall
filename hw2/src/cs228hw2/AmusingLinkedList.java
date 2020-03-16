@@ -29,27 +29,35 @@ public class AmusingLinkedList<E> implements List {
 
 	public class Node {
 
-		Node next;
-		Node prev;
 		E data;
+		Node left;
+		Node right;
+		Node parent;
 
-		public Node(E e, Node n, Node p) {
-			data = e;
-			next = n;
-			prev = p;
+		public Node(E d, Node p, Node l, Node r) {
+			data = d;
+			parent = p;
+			left = l;
+			right = r;
+
 		}
 
 		public E getData() {
-			return data;
+		 	return data;
+		 }
+		
+		public Node getLeftChild() {
+	 		return left;
 		}
 
-		public Node getNext() {
-			return next;
+		public Node getRightChild() {
+	 		return right;
 		}
 
-		public Node getPrev() {
-			return prev;
+		public Node getParent() {
+	 		return parent;
 		}
+
 	}
 
 	public class AmusingListIterator implements ListIterator<E> {
